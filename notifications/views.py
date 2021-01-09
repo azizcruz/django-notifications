@@ -183,6 +183,7 @@ def live_unread_notification_list(request):
             struct['action_object'] = str(notification.action_object)
         if notification.data:
             struct['data'] = notification.data
+        struct['timestamp'] = arrow.get(struct['timestamp']).humanize(locale='ar')
         unread_list.append(struct)
         if request.GET.get('mark_as_read'):
             notification.mark_as_read()
