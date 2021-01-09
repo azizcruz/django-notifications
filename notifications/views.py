@@ -14,6 +14,7 @@ from notifications import settings
 from notifications.settings import get_config
 from notifications.utils import id2slug, slug2id
 from swapper import load_model
+import arrow
 
 Notification = load_model('notifications', 'Notification')
 
